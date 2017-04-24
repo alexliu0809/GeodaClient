@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C32097C81E9AA1D800E3AD37 /* absolute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C32097C61E9AA1D800E3AD37 /* absolute.cpp */; };
+		C32097CC1E9AA3E200E3AD37 /* sizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C32097CB1E9AA3E200E3AD37 /* sizer.cpp */; };
+		C32097CE1E9AA54400E3AD37 /* border.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C32097CD1E9AA54400E3AD37 /* border.cpp */; };
+		C32097D21E9AA60D00E3AD37 /* align.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C32097D11E9AA60D00E3AD37 /* align.cpp */; };
+		C32097D51E9AA77900E3AD37 /* gotoclass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C32097D41E9AA77900E3AD37 /* gotoclass.cpp */; };
+		C38C88461EA95CCE00F858DC /* foldpanelitem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C38C88451EA95CCE00F858DC /* foldpanelitem.cpp */; };
+		C38C88481EA95CF000F858DC /* foldpanelbar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C38C88471EA95CF000F858DC /* foldpanelbar.cpp */; };
+		C38C884A1EA95D1000F858DC /* captionbar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C38C88491EA95D1000F858DC /* captionbar.cpp */; };
+		C393604C1E9A99860022EA66 /* simple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C393604B1E9A99860022EA66 /* simple.cpp */; };
+		C393604E1E9A99900022EA66 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C393604D1E9A99900022EA66 /* main.cpp */; };
+		C39360521E9A9A140022EA66 /* icon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C39360501E9A9A140022EA66 /* icon.cpp */; };
+		C39360551E9A9B330022EA66 /* button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C39360541E9A9B330022EA66 /* button.cpp */; };
+		C39360571E9A9BED0022EA66 /* Panels.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C39360561E9A9BED0022EA66 /* Panels.cpp */; };
+		C393605B1E9A9C2C0022EA66 /* Communicate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C393605A1E9A9C2C0022EA66 /* Communicate.cpp */; };
+		C393605F1E9A9D5E0022EA66 /* menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C393605D1E9A9D5E0022EA66 /* menu.cpp */; };
+		C39360621E9A9ED60022EA66 /* toolbars.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C39360611E9A9ED60022EA66 /* toolbars.cpp */; };
+		C3F7819B1EA125950009C837 /* Listbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3F7819A1EA125950009C837 /* Listbox.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C31FD1791E8ACAEA00BB9B46 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C31FD17B1E8ACAEA00BB9B46 /* wxWidget */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = wxWidget; sourceTree = BUILT_PRODUCTS_DIR; };
+		C32097C61E9AA1D800E3AD37 /* absolute.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = absolute.cpp; sourceTree = "<group>"; };
+		C32097C91E9AA1E500E3AD37 /* absolute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = absolute.h; sourceTree = "<group>"; };
+		C32097CA1E9AA3D300E3AD37 /* sizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sizer.h; sourceTree = "<group>"; };
+		C32097CB1E9AA3E200E3AD37 /* sizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sizer.cpp; sourceTree = "<group>"; };
+		C32097CD1E9AA54400E3AD37 /* border.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = border.cpp; sourceTree = "<group>"; };
+		C32097CF1E9AA54C00E3AD37 /* border.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = border.h; sourceTree = "<group>"; };
+		C32097D01E9AA60400E3AD37 /* align.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = align.h; sourceTree = "<group>"; };
+		C32097D11E9AA60D00E3AD37 /* align.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = align.cpp; sourceTree = "<group>"; };
+		C32097D31E9AA76F00E3AD37 /* gotoclass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gotoclass.h; sourceTree = "<group>"; };
+		C32097D41E9AA77900E3AD37 /* gotoclass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gotoclass.cpp; sourceTree = "<group>"; };
+		C38C88421EA95BD100F858DC /* foldpanelbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = foldpanelbar.h; sourceTree = "<group>"; };
+		C38C88431EA95C3000F858DC /* captionbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = captionbar.h; sourceTree = "<group>"; };
+		C38C88441EA95C7900F858DC /* foldpanelitem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = foldpanelitem.h; sourceTree = "<group>"; };
+		C38C88451EA95CCE00F858DC /* foldpanelitem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = foldpanelitem.cpp; sourceTree = "<group>"; };
+		C38C88471EA95CF000F858DC /* foldpanelbar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = foldpanelbar.cpp; sourceTree = "<group>"; };
+		C38C88491EA95D1000F858DC /* captionbar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = captionbar.cpp; sourceTree = "<group>"; };
+		C38C884B1EA95DA500F858DC /* icon_collapsed.xpm */ = {isa = PBXFileReference; lastKnownFileType = text; path = icon_collapsed.xpm; sourceTree = "<group>"; };
+		C38C884C1EA95DA500F858DC /* icon_expanded.xpm */ = {isa = PBXFileReference; lastKnownFileType = text; path = icon_expanded.xpm; sourceTree = "<group>"; };
+		C38C884D1EA95DA500F858DC /* icon_theresmore.xpm */ = {isa = PBXFileReference; lastKnownFileType = text; path = icon_theresmore.xpm; sourceTree = "<group>"; };
+		C39360491E9A99650022EA66 /* simple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simple.h; sourceTree = "<group>"; };
+		C393604A1E9A99760022EA66 /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		C393604B1E9A99860022EA66 /* simple.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = simple.cpp; sourceTree = "<group>"; };
+		C393604D1E9A99900022EA66 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C393604F1E9A9A0C0022EA66 /* icon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = icon.h; sourceTree = "<group>"; };
+		C39360501E9A9A140022EA66 /* icon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = icon.cpp; sourceTree = "<group>"; };
+		C39360531E9A9B290022EA66 /* button.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = button.h; sourceTree = "<group>"; };
+		C39360541E9A9B330022EA66 /* button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = button.cpp; sourceTree = "<group>"; };
+		C39360561E9A9BED0022EA66 /* Panels.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Panels.cpp; sourceTree = "<group>"; };
+		C39360581E9A9BF90022EA66 /* Panels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Panels.h; sourceTree = "<group>"; };
+		C39360591E9A9C220022EA66 /* Communicate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Communicate.h; sourceTree = "<group>"; };
+		C393605A1E9A9C2C0022EA66 /* Communicate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Communicate.cpp; sourceTree = "<group>"; };
+		C393605C1E9A9D570022EA66 /* menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = menu.h; sourceTree = "<group>"; };
+		C393605D1E9A9D5E0022EA66 /* menu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = menu.cpp; sourceTree = "<group>"; };
+		C39360601E9A9EC90022EA66 /* toolbars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = toolbars.h; sourceTree = "<group>"; };
+		C39360611E9A9ED60022EA66 /* toolbars.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = toolbars.cpp; sourceTree = "<group>"; };
+		C3F781991EA1257F0009C837 /* Listbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Listbox.h; sourceTree = "<group>"; };
+		C3F7819A1EA125950009C837 /* Listbox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Listbox.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C31FD1781E8ACAEA00BB9B46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C31FD1721E8ACAEA00BB9B46 = {
+			isa = PBXGroup;
+			children = (
+				C31FD17D1E8ACAEA00BB9B46 /* wxWidget */,
+				C31FD17C1E8ACAEA00BB9B46 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C31FD17C1E8ACAEA00BB9B46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD17B1E8ACAEA00BB9B46 /* wxWidget */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C31FD17D1E8ACAEA00BB9B46 /* wxWidget */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD1A01E8AE26200BB9B46 /* src */,
+				C31FD19F1E8AE25500BB9B46 /* include */,
+			);
+			path = wxWidget;
+			sourceTree = "<group>";
+		};
+		C31FD19F1E8AE25500BB9B46 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				C39360561E9A9BED0022EA66 /* Panels.cpp */,
+				C393604B1E9A99860022EA66 /* simple.cpp */,
+				C393604D1E9A99900022EA66 /* main.cpp */,
+				C39360501E9A9A140022EA66 /* icon.cpp */,
+				C39360541E9A9B330022EA66 /* button.cpp */,
+				C393605A1E9A9C2C0022EA66 /* Communicate.cpp */,
+				C393605D1E9A9D5E0022EA66 /* menu.cpp */,
+				C39360611E9A9ED60022EA66 /* toolbars.cpp */,
+				C32097C61E9AA1D800E3AD37 /* absolute.cpp */,
+				C32097CB1E9AA3E200E3AD37 /* sizer.cpp */,
+				C32097CD1E9AA54400E3AD37 /* border.cpp */,
+				C32097D11E9AA60D00E3AD37 /* align.cpp */,
+				C32097D41E9AA77900E3AD37 /* gotoclass.cpp */,
+				C3F7819A1EA125950009C837 /* Listbox.cpp */,
+				C38C88451EA95CCE00F858DC /* foldpanelitem.cpp */,
+				C38C88471EA95CF000F858DC /* foldpanelbar.cpp */,
+				C38C88491EA95D1000F858DC /* captionbar.cpp */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		C31FD1A01E8AE26200BB9B46 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C39360491E9A99650022EA66 /* simple.h */,
+				C393604A1E9A99760022EA66 /* main.h */,
+				C393604F1E9A9A0C0022EA66 /* icon.h */,
+				C39360531E9A9B290022EA66 /* button.h */,
+				C39360581E9A9BF90022EA66 /* Panels.h */,
+				C39360591E9A9C220022EA66 /* Communicate.h */,
+				C393605C1E9A9D570022EA66 /* menu.h */,
+				C39360601E9A9EC90022EA66 /* toolbars.h */,
+				C32097C91E9AA1E500E3AD37 /* absolute.h */,
+				C32097CA1E9AA3D300E3AD37 /* sizer.h */,
+				C32097CF1E9AA54C00E3AD37 /* border.h */,
+				C32097D01E9AA60400E3AD37 /* align.h */,
+				C32097D31E9AA76F00E3AD37 /* gotoclass.h */,
+				C3F781991EA1257F0009C837 /* Listbox.h */,
+				C38C88421EA95BD100F858DC /* foldpanelbar.h */,
+				C38C88431EA95C3000F858DC /* captionbar.h */,
+				C38C88441EA95C7900F858DC /* foldpanelitem.h */,
+				C38C884B1EA95DA500F858DC /* icon_collapsed.xpm */,
+				C38C884C1EA95DA500F858DC /* icon_expanded.xpm */,
+				C38C884D1EA95DA500F858DC /* icon_theresmore.xpm */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C31FD17A1E8ACAEA00BB9B46 /* wxWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C31FD1821E8ACAEA00BB9B46 /* Build configuration list for PBXNativeTarget "wxWidget" */;
+			buildPhases = (
+				C31FD1771E8ACAEA00BB9B46 /* Sources */,
+				C31FD1781E8ACAEA00BB9B46 /* Frameworks */,
+				C31FD1791E8ACAEA00BB9B46 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wxWidget;
+			productName = wxWidget;
+			productReference = C31FD17B1E8ACAEA00BB9B46 /* wxWidget */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C31FD1731E8ACAEA00BB9B46 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = alexliu;
+				TargetAttributes = {
+					C31FD17A1E8ACAEA00BB9B46 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C31FD1761E8ACAEA00BB9B46 /* Build configuration list for PBXProject "wxWidget" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C31FD1721E8ACAEA00BB9B46;
+			productRefGroup = C31FD17C1E8ACAEA00BB9B46 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C31FD17A1E8ACAEA00BB9B46 /* wxWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C31FD1771E8ACAEA00BB9B46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C32097C81E9AA1D800E3AD37 /* absolute.cpp in Sources */,
+				C393605F1E9A9D5E0022EA66 /* menu.cpp in Sources */,
+				C393604E1E9A99900022EA66 /* main.cpp in Sources */,
+				C38C884A1EA95D1000F858DC /* captionbar.cpp in Sources */,
+				C3F7819B1EA125950009C837 /* Listbox.cpp in Sources */,
+				C38C88461EA95CCE00F858DC /* foldpanelitem.cpp in Sources */,
+				C32097CE1E9AA54400E3AD37 /* border.cpp in Sources */,
+				C393604C1E9A99860022EA66 /* simple.cpp in Sources */,
+				C32097D21E9AA60D00E3AD37 /* align.cpp in Sources */,
+				C39360621E9A9ED60022EA66 /* toolbars.cpp in Sources */,
+				C39360521E9A9A140022EA66 /* icon.cpp in Sources */,
+				C39360551E9A9B330022EA66 /* button.cpp in Sources */,
+				C38C88481EA95CF000F858DC /* foldpanelbar.cpp in Sources */,
+				C39360571E9A9BED0022EA66 /* Panels.cpp in Sources */,
+				C393605B1E9A9C2C0022EA66 /* Communicate.cpp in Sources */,
+				C32097CC1E9AA3E200E3AD37 /* sizer.cpp in Sources */,
+				C32097D51E9AA77900E3AD37 /* gotoclass.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C31FD1801E8ACAEA00BB9B46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C31FD1811E8ACAEA00BB9B46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C31FD1831E8ACAEA00BB9B46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_VERSION = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I/usr/local/lib/wx/include/osx_cocoa-unicode-3.0",
+					"-I/usr/local/include/wx-3.0",
+					"-D_FILE_OFFSET_BITS=64",
+					"-DWXUSINGDLL",
+					"-D__WXMAC__",
+					"-D__WXOSX__",
+					"-D__WXOSX_COCOA__",
+				);
+				OTHER_LDFLAGS = (
+					"-L/usr/local/lib",
+					"-framework",
+					IOKit,
+					"-framework",
+					Carbon,
+					"-framework",
+					Cocoa,
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					System,
+					"-framework",
+					OpenGL,
+					"-lwx_osx_cocoau_xrc-3.0",
+					"-lwx_osx_cocoau_webview-3.0",
+					"-lwx_osx_cocoau_html-3.0",
+					"-lwx_osx_cocoau_qa-3.0",
+					"-lwx_osx_cocoau_adv-3.0",
+					"-lwx_osx_cocoau_core-3.0",
+					"-lwx_baseu_xml-3.0",
+					"-lwx_baseu_net-3.0",
+					"-lwx_baseu-3.0",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C31FD1841E8ACAEA00BB9B46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_VERSION = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I/usr/local/lib/wx/include/osx_cocoa-unicode-3.0",
+					"-I/usr/local/include/wx-3.0",
+					"-D_FILE_OFFSET_BITS=64",
+					"-DWXUSINGDLL",
+					"-D__WXMAC__",
+					"-D__WXOSX__",
+					"-D__WXOSX_COCOA__",
+				);
+				OTHER_LDFLAGS = (
+					"-L/usr/local/lib",
+					"-framework",
+					IOKit,
+					"-framework",
+					Carbon,
+					"-framework",
+					Cocoa,
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					System,
+					"-framework",
+					OpenGL,
+					"-lwx_osx_cocoau_xrc-3.0",
+					"-lwx_osx_cocoau_webview-3.0",
+					"-lwx_osx_cocoau_html-3.0",
+					"-lwx_osx_cocoau_qa-3.0",
+					"-lwx_osx_cocoau_adv-3.0",
+					"-lwx_osx_cocoau_core-3.0",
+					"-lwx_baseu_xml-3.0",
+					"-lwx_baseu_net-3.0",
+					"-lwx_baseu-3.0",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C31FD1761E8ACAEA00BB9B46 /* Build configuration list for PBXProject "wxWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C31FD1801E8ACAEA00BB9B46 /* Debug */,
+				C31FD1811E8ACAEA00BB9B46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C31FD1821E8ACAEA00BB9B46 /* Build configuration list for PBXNativeTarget "wxWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C31FD1831E8ACAEA00BB9B46 /* Debug */,
+				C31FD1841E8ACAEA00BB9B46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C31FD1731E8ACAEA00BB9B46 /* Project object */;
+}
