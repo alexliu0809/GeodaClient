@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wxWidget/gotoclass.cpp"
-            timestampString = "514417527.247246"
+            timestampString = "514694972.740493"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "GotoClass::GotoClass(const wxString&amp; title)"
             landmarkType = "7">
          </BreakpointContent>

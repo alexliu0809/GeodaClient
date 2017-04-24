@@ -11,7 +11,7 @@
 #include "foldpanelbar.h"
 
 GotoClass::GotoClass(const wxString& title)
-: wxFrame(NULL, -1, title, wxPoint(-1, -1), wxSize(600, 400))
+: wxFrame(NULL, -1, title, wxPoint(-1, -1), wxSize(800, 550))
 {
     /*
     wxBoxSizer  *topSizer = new wxBoxSizer( wxVERTICAL );
@@ -92,34 +92,121 @@ GotoClass::GotoClass(const wxString& title)
     
     //Model spec
     wxStaticText *strModelSpec =  new wxStaticText(panel, wxID_ANY, wxT("Model Specifications"));
-    wxFoldPanelBar *bar = new wxFoldPanelBar(panel);
-    wxFoldPanel item = bar->AddFoldPanel(wxT("Y(required)"));
-    bar->AddFoldPanelWindow(item, new wxTextCtrl( item.GetParent(), wxID_ANY, "My text.", wxDefaultPosition, wxSize(100,60), wxTE_MULTILINE));
     
-    //test->Item(2);
+    //Model Spec Top level
+    wxBoxSizer *model_top_level_sizer = new wxBoxSizer(wxHORIZONTAL);
     
-    //add
-    leftvbox ->  Add(strModelSpec,0,wxALIGN_LEFT);
-    leftvbox ->  Add(bar,1,wxGROW);
+    //Set up model spec left
+    wxBoxSizer *model_left_sizer = new wxBoxSizer(wxVERTICAL);
+    
+    //Y
+    wxFoldPanelBar *bar_Y = new wxFoldPanelBar(panel);
+    wxFoldPanel item_Y = bar_Y->AddFoldPanel(wxT("Y(required)"));
+    wxListBox *lb_Y = new wxListBox(item_Y.GetParent(), ID_LISTBOX, wxPoint(-1, -1), wxSize(-1, -1));
+    lb_Y->Append( wxT("Add Item Here") );
+    bar_Y->AddFoldPanelWindow(item_Y, lb_Y);
+    model_left_sizer ->  Add(bar_Y,1,wxGROW); //add to left
+    
+    //YE
+    wxFoldPanelBar *bar_YE = new wxFoldPanelBar(panel);
+    wxFoldPanel item_Ye = bar_YE->AddFoldPanel(wxT("YE"),true); //collapsed = true
+    wxListBox *lb_YE = new wxListBox(item_Ye.GetParent(), ID_LISTBOX, wxPoint(-1, -1), wxSize(-1, -1));
+    lb_YE->Append( wxT("Add Item Here") );
+    bar_YE->AddFoldPanelWindow(item_Ye, lb_YE);
+    model_left_sizer ->  Add(bar_YE,1,wxGROW);
+    
+    
+    
+    //Intruments
+    wxFoldPanelBar *bar_Ins = new wxFoldPanelBar(panel);
+    wxFoldPanel item_Ins = bar_Ins->AddFoldPanel(wxT("Instruments"),true); //collapsed = true
+    wxListBox *lb_Ins = new wxListBox(item_Ins.GetParent(), ID_LISTBOX, wxPoint(-1, -1), wxSize(-1, -1));
+    lb_Ins->Append( wxT("Add Item Here") );
+    bar_Ins->AddFoldPanelWindow(item_Ins, lb_Ins);
+    model_left_sizer ->  Add(bar_Ins,1,wxGROW);
+    
+    //R
+    //Set up model spec right
+    wxFoldPanelBar *bar_R = new wxFoldPanelBar(panel);
+    wxFoldPanel item_R = bar_R->AddFoldPanel(wxT("R"),true);
+    wxListBox *lb_R = new wxListBox(item_R.GetParent(), ID_LISTBOX, wxPoint(-1, -1), wxSize(-1, -1));
+    lb_R->Append( wxT("Add Item Here") );
+    bar_R->AddFoldPanelWindow(item_R, lb_R);
+    model_left_sizer ->  Add(bar_R,1,wxGROW);
+    
+    //left set up
+    model_top_level_sizer -> Add(model_left_sizer,1,wxGROW);
+    
+    
+    //Set up model spec right
+    wxFoldPanelBar *bar_X = new wxFoldPanelBar(panel);
+    wxFoldPanel item_X = bar_X->AddFoldPanel(wxT("X(required)"));
+    wxListBox *lb_X = new wxListBox(item_X.GetParent(), ID_LISTBOX, wxPoint(-1, -1), wxSize(-1, -1));
+    lb_X->Append( wxT("Add Item Here") );
+    bar_X->AddFoldPanelWindow(item_X, lb_X);
+    model_top_level_sizer ->  Add(bar_X,1,wxGROW);
+    
+    //add model spec
+    leftvbox -> Add(strModelSpec,0,wxALIGN_LEFT);
+    leftvbox -> Add(model_top_level_sizer,1,wxGROW);
     leftvbox -> AddSpacer(10);
     
     //Esimation
     wxStaticText *strEsimation =  new wxStaticText(panel, wxID_ANY, wxT("Estimation"));
-    wxStaticBox* staticBox = new wxStaticBox(panel, wxID_ANY, wxT(""));
-    wxStaticBoxSizer* staticSizer = new wxStaticBoxSizer(staticBox, wxVERTICAL);
-    wxArrayString strings;
-    strings.Add(wxT("Standard"));
-    strings.Add(wxT("Spatial Lag"));
-    strings.Add(wxT("Spatial Error"));
-    strings.Add(wxT("Spatial Lag+Error"));
-    wxRadioBox* radioBox = new wxRadioBox(panel, wxID_ANY, wxT("Model Type"), wxDefaultPosition, wxDefaultSize, strings, 1, wxRA_SPECIFY_COLS);
+    //Estimation Top Level:
+    //wxBoxSizer *est_top_level_sizer = new wxBoxSizer(wxHORIZONTAL);
+    wxStaticBox* est_top_level_staticBox = new wxStaticBox(panel, wxID_ANY, wxT(""));
+    wxStaticBoxSizer* est_top_level_sizer = new wxStaticBoxSizer(est_top_level_staticBox, wxHORIZONTAL);
     
-    staticSizer -> Add(radioBox, 0, wxALIGN_LEFT |wxALL, 0);
+    //Type
+    //wxStaticBox* staticBox_type = new wxStaticBox(panel, wxID_ANY, wxT(""));
+    //wxStaticBoxSizer* staticSizer_type = new wxStaticBoxSizer(staticBox_type, wxVERTICAL);
+    wxArrayString strings_type;
+    strings_type.Add(wxT("Standard"));
+    strings_type.Add(wxT("Spatial Lag"));
+    strings_type.Add(wxT("Spatial Error"));
+    strings_type.Add(wxT("Spatial Lag+Error"));
+    wxRadioBox* radioBox_type = new wxRadioBox(panel, wxID_ANY, wxT("Model Type"), wxDefaultPosition, wxDefaultSize, strings_type, 1, wxRA_SPECIFY_COLS);
+    est_top_level_sizer ->Add(radioBox_type, 0, wxALIGN_LEFT |wxALL, 0);
+    //staticSizer_type -> Add(radioBox_type, 0, wxALIGN_LEFT |wxALL, 0);
+    //est_top_level_sizer -> Add(staticSizer_type,1,wxGROW);
+    
+    //Method
+    //wxStaticBox* staticBox_method = new wxStaticBox(panel, wxID_ANY, wxT(""));
+    //wxStaticBoxSizer* staticSizer_method = new wxStaticBoxSizer(staticBox_method, wxVERTICAL);
+    wxArrayString strings_method;
+    strings_method.Add(wxT("Standard"));
+    strings_method.Add(wxT("Spatial Lag"));
+    strings_method.Add(wxT("Spatial Error"));
+    strings_method.Add(wxT("Spatial Lag+Error"));
+    wxRadioBox* radioBox_method = new wxRadioBox(panel, wxID_ANY, wxT("Method"), wxDefaultPosition, wxDefaultSize, strings_method, 1, wxRA_SPECIFY_COLS);
+    est_top_level_sizer ->Add(radioBox_method, 0, wxALIGN_LEFT |wxALL, 0);
+    //staticSizer_method -> Add(radioBox_method, 0, wxALIGN_LEFT |wxALL, 0);
+    //est_top_level_sizer -> Add(staticSizer_method,1,wxGROW);
+    
+    //Errors
+    //wxStaticBox* staticBox_error = new wxStaticBox(panel, wxID_ANY, wxT(""));
+    //wxStaticBoxSizer* staticSizer_error = new wxStaticBoxSizer(staticBox_error, wxVERTICAL);
+    /*
+     wxWindow *parent, wxWindowID id, const wxString& label,
+    const wxPoint& pos = wxDefaultPosition,
+    const wxSize& size = wxDefaultSize, long style = 0,
+    const wxValidator& validator = wxDefaultValidator,
+    const wxString& name = wxCheckBoxNameStr
+     */
+    wxArrayString strings_error;
+    strings_error.Add(wxT("White"));
+    strings_error.Add(wxT("HAC"));
+    strings_error.Add(wxT("KP HET"));
+    wxCheckListBox *checkBox_error = new wxCheckListBox(panel, wxID_ANY, wxDefaultPosition, wxDefaultSize, strings_error, 0, wxDefaultValidator, wxT("Error"));
+    est_top_level_sizer ->Add(checkBox_error, 0, wxALIGN_LEFT | wxTOP | wxLeft, 15);
+    //staticSizer_error -> Add(radioBox_error, 0, wxALIGN_LEFT |wxALL, 0);
+    //est_top_level_sizer -> Add(staticSizer_error,1,wxGROW);
     
     //add
     leftvbox ->  Add(strEsimation,0,wxGROW); //0 means does not change space when resizeing, wxGROW Means auto sizing. Grow Enables two sides growing, but 0/1 controls the size of its parent direction
-    leftvbox ->  Add(staticSizer,0);
-    leftvbox -> AddSpacer(10);
+    leftvbox ->  Add(est_top_level_sizer,0,wxGROW); //Set the space given to estimation to 0
+    //leftvbox -> AddSpacer(10);
 
     
     //Model Weights
