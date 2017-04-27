@@ -299,6 +299,8 @@ GotoClass::GotoClass(const wxString& title)
     
     Centre();
     
+    InitializePython();
+    
 }
 
 void GotoClass::BtnRunClicked(wxCommandEvent& event)

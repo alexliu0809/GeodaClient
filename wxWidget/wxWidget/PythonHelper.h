@@ -13,5 +13,7 @@
 #include <stdlib.h>
 
 int RunPython();
+void InitializePython();
+void FinalizePython();
 
 #endif /* PythonHelper_h */

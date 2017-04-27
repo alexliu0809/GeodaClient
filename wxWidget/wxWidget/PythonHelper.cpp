@@ -190,10 +190,11 @@ void Python_Append_List_Element(PyObject*pList, PyObject* element)
 
 
 
+
 int RunPython()
 {
     
-    InitializePython();
+    //InitializePython();
     
     PyObject *pValue=nullptr,*pArgs=nullptr,*pValue1,*pValue2,*pValue3,*pValue4;
     PyObject *pResult,*pList1,*pList2;
@@ -207,8 +208,8 @@ int RunPython()
     //printf("\n\n");
     
     
-    
-    FinalizePython();
+    //You need to finalize Python somewhere
+    //FinalizePython();
     return 0;
 }
 
