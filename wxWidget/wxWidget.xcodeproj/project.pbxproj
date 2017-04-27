@@ -24,6 +24,8 @@
 		C393605B1E9A9C2C0022EA66 /* Communicate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C393605A1E9A9C2C0022EA66 /* Communicate.cpp */; };
 		C393605F1E9A9D5E0022EA66 /* menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C393605D1E9A9D5E0022EA66 /* menu.cpp */; };
 		C39360621E9A9ED60022EA66 /* toolbars.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C39360611E9A9ED60022EA66 /* toolbars.cpp */; };
+		C3CEF2DF1EB25AA30040FE6E /* PythonHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3CEF2DE1EB25AA30040FE6E /* PythonHelper.cpp */; };
+		C3CEF2E31EB25BE70040FE6E /* libpython2.7.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CEF2E21EB25BE70040FE6E /* libpython2.7.dylib */; };
 		C3F7819B1EA125950009C837 /* Listbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3F7819A1EA125950009C837 /* Listbox.cpp */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +80,9 @@
 		C393605D1E9A9D5E0022EA66 /* menu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = menu.cpp; sourceTree = "<group>"; };
 		C39360601E9A9EC90022EA66 /* toolbars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = toolbars.h; sourceTree = "<group>"; };
 		C39360611E9A9ED60022EA66 /* toolbars.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = toolbars.cpp; sourceTree = "<group>"; };
+		C3CEF2DE1EB25AA30040FE6E /* PythonHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PythonHelper.cpp; sourceTree = "<group>"; };
+		C3CEF2E01EB25ACD0040FE6E /* PythonHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PythonHelper.h; sourceTree = "<group>"; };
+		C3CEF2E21EB25BE70040FE6E /* libpython2.7.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpython2.7.dylib; path = ../../PythonOnMac/Python2.7ForMac/anaconda/lib/libpython2.7.dylib; sourceTree = "<group>"; };
 		C3F781991EA1257F0009C837 /* Listbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Listbox.h; sourceTree = "<group>"; };
 		C3F7819A1EA125950009C837 /* Listbox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Listbox.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3CEF2E31EB25BE70040FE6E /* libpython2.7.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +104,7 @@
 			children = (
 				C31FD17D1E8ACAEA00BB9B46 /* wxWidget */,
 				C31FD17C1E8ACAEA00BB9B46 /* Products */,
+				C3CEF2E11EB25BE70040FE6E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +146,7 @@
 				C38C88471EA95CF000F858DC /* foldpanelbar.cpp */,
 				C38C88491EA95D1000F858DC /* captionbar.cpp */,
 				C386D7F11EAFB8B90068D0D0 /* textdrop.cpp */,
+				C3CEF2DE1EB25AA30040FE6E /* PythonHelper.cpp */,
 			);
 			name = include;
 			sourceTree = "<group>";
@@ -167,8 +175,17 @@
 				C38C884C1EA95DA500F858DC /* icon_expanded.xpm */,
 				C38C884D1EA95DA500F858DC /* icon_theresmore.xpm */,
 				C386D7F31EAFB8C00068D0D0 /* textdrop.h */,
+				C3CEF2E01EB25ACD0040FE6E /* PythonHelper.h */,
 			);
 			name = src;
+			sourceTree = "<group>";
+		};
+		C3CEF2E11EB25BE70040FE6E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3CEF2E21EB25BE70040FE6E /* libpython2.7.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +251,7 @@
 				C393604E1E9A99900022EA66 /* main.cpp in Sources */,
 				C38C884A1EA95D1000F858DC /* captionbar.cpp in Sources */,
 				C3F7819B1EA125950009C837 /* Listbox.cpp in Sources */,
+				C3CEF2DF1EB25AA30040FE6E /* PythonHelper.cpp in Sources */,
 				C38C88461EA95CCE00F858DC /* foldpanelitem.cpp in Sources */,
 				C32097CE1E9AA54400E3AD37 /* border.cpp in Sources */,
 				C393604C1E9A99860022EA66 /* simple.cpp in Sources */,
@@ -343,6 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../PythonOnMac/Python2.7ForMac/anaconda/include\"";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-I/usr/local/lib/wx/include/osx_cocoa-unicode-3.0",
@@ -385,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../PythonOnMac/Python2.7ForMac/anaconda/include\"";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-I/usr/local/lib/wx/include/osx_cocoa-unicode-3.0",

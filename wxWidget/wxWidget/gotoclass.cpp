@@ -9,7 +9,7 @@
 #include "gotoclass.h"
 #include "Listbox.h"
 #include "foldpanelbar.h"
-
+#include "PythonHelper.h"
 
 
 GotoClass::GotoClass(const wxString& title)
@@ -292,7 +292,7 @@ GotoClass::GotoClass(const wxString& title)
 void GotoClass::BtnRunClicked(wxCommandEvent& event)
 {
     wxPuts("Run Clicked");
-    
+    RunPython();
     
 }
 

@@ -14,9 +14,7 @@
 #include <wx/dnd.h>
 #include <wx/wx.h>
 
-#include "Python2.7/Python.h"
-#include "Python2.7/object.h"
-#include <stdlib.h>
+
 
 class GotoClass : public wxFrame
 {
