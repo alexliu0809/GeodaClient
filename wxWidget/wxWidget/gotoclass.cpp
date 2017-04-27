@@ -243,14 +243,26 @@ GotoClass::GotoClass(const wxString& title)
     //Variables
     wxStaticText *strVariables =  new wxStaticText(panel, wxID_ANY, wxT("Variables"));
     lb_var = new wxListCtrl(panel, -1, wxPoint(-1, -1), wxSize(-1, -1));
-    lb_var->InsertItem(0, wxT("po90") );
-    lb_var->InsertItem(0, wxT("po80") );
-    lb_var->InsertItem(0, wxT("po70") );
-    lb_var->InsertItem(0,wxT("po60") );
-    lb_var->InsertItem(0, wxT("south") );
-    lb_var->InsertItem(0, wxT("fh90") );
-    lb_var->InsertItem(0, wxT("fh80") );
-    lb_var->InsertItem(0, wxT("fh70") );
+    
+   // wxString str1 = wxT("asfd2  ");
+    //str1 = str1.Trim();
+    //lb_var->InsertItem(0, str1 );
+    //wxString str2 = wxT("dsf1  ");
+    //str2 = str2.Trim();
+    //lb_var->InsertItem(0, str2 );
+    
+    lb_var->InsertItem(0, wxT("po90  "));
+    lb_var->InsertItem(0, wxT("po80  ") );
+    lb_var->InsertItem(0, wxT("po70  ") );
+    lb_var->InsertItem(0,wxT("po60  ") );
+    //lb_var->InsertItem(0, wxT("south         ")); //5 spaces, # of spaces related to number of chars
+    lb_var->InsertItem(0, wxT("fh90  "));
+    lb_var->InsertItem(0, wxT("fh80  ") );
+    lb_var->InsertItem(0, wxT("fh70  ") );
+    lb_var->InsertItem(0, wxT("blk90   "));
+    lb_var->InsertItem(0, wxT("blk80   ") );
+    lb_var->InsertItem(0, wxT("blk70   ") );
+    
     rightvbox -> Add(strVariables,0,wxGROW );
     rightvbox -> Add(lb_var,1,wxGROW);
     
@@ -304,9 +316,10 @@ MyTargetListBox::MyTargetListBox(wxListBox *owner)
 
 bool MyTargetListBox::OnDropText(wxCoord x, wxCoord y, const wxString& data)
 {
-    wxString data_utf8 = wxString::FromUTF8(data);
-    wxPuts(data_utf8);
-    m_owner->Append(data_utf8);
+    wxPuts("Data Receive:");
+    wxPuts(data);
+    wxString data_trim = wxString(data).Trim();
+    m_owner->Append(data_trim);
     return true;
     
 }
@@ -316,10 +329,11 @@ void GotoClass::OnDragInit(wxListEvent& event)
 {
     
     wxString text = lb_var->GetItemText(event.GetIndex());
-    wxString text_utf8 = wxString::FromUTF8(text);
-    wxPuts(text_utf8);
+    //text = text.Trim();
+    wxPuts("Data Sent:");
+    wxPuts(text);
 
-    wxTextDataObject tdo(text_utf8);
+    wxTextDataObject tdo(text);
     wxDropSource tds(tdo, lb_Y);
     tds.DoDragDrop(wxDrag_CopyOnly);
     

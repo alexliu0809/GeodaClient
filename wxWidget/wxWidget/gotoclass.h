@@ -20,8 +20,7 @@ class GotoClass : public wxFrame
 {
 public:
     GotoClass(const wxString& title);
-    
-    //void OnSelect(wxCommandEvent& event);
+    // OnSelect(wxCommandEvent& event);
     void OnDragInit(wxListEvent& event);
     void BtnRunClicked(wxCommandEvent & event);
     
@@ -31,6 +30,7 @@ public:
     wxListBox *lb_R;
     wxListBox *lb_X;
     wxListCtrl *lb_var;
+
     
 };
 
