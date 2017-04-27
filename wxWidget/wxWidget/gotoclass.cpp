@@ -10,6 +10,11 @@
 #include "Listbox.h"
 #include "foldpanelbar.h"
 
+void handlerFuncName(wxCommandEvent& event)
+{
+    wxPuts("Mother Fucker");
+}
+
 GotoClass::GotoClass(const wxString& title)
 : wxFrame(NULL, -1, title, wxPoint(-1, -1), wxSize(800, 550))
 {
@@ -65,6 +70,11 @@ GotoClass::GotoClass(const wxString& title)
     wxButton *resetModel = new wxButton(panel, wxID_ANY, wxT("Reset Model"));
     wxButton *preference = new wxButton(panel, wxID_ANY, wxT("Preference"));
     wxButton *run = new wxButton(panel, wxID_ANY, wxT("Run"));
+    
+    //Connect
+    
+    
+    //add
     spatialButtonsBoxer -> Add(openModel,1);
     spatialButtonsBoxer -> Add(saveModel,1);
     spatialButtonsBoxer -> Add(resetModel,1);
@@ -72,6 +82,8 @@ GotoClass::GotoClass(const wxString& title)
     spatialButtonsBoxer -> Add(run,1);
     uppervbox -> Add(spatialButtonsBoxer,1,wxGROW);
     uppervbox -> AddSpacer(10);
+    
+    
     /**** Upperbox is set here ****/
     
     
@@ -102,16 +114,16 @@ GotoClass::GotoClass(const wxString& title)
     //Y
     wxFoldPanelBar *bar_Y = new wxFoldPanelBar(panel);
     wxFoldPanel item_Y = bar_Y->AddFoldPanel(wxT("Y(required)"));
-    wxListBox *lb_Y = new wxListBox(item_Y.GetParent(), ID_LISTBOX, wxPoint(-1, -1), wxSize(-1, -1));
-    lb_Y->Append( wxT("Add Item Here") );
+    lb_Y = new wxListBox(item_Y.GetParent(), -1, wxPoint(-1, -1), wxSize(-1, -1));
+    //lb_Y->Append(wxT("Add Item Here") );
     bar_Y->AddFoldPanelWindow(item_Y, lb_Y);
     model_left_sizer ->  Add(bar_Y,1,wxGROW); //add to left
     
     //YE
     wxFoldPanelBar *bar_YE = new wxFoldPanelBar(panel);
     wxFoldPanel item_Ye = bar_YE->AddFoldPanel(wxT("YE"),true); //collapsed = true
-    wxListBox *lb_YE = new wxListBox(item_Ye.GetParent(), ID_LISTBOX, wxPoint(-1, -1), wxSize(-1, -1));
-    lb_YE->Append( wxT("Add Item Here") );
+    lb_YE = new wxListBox(item_Ye.GetParent(), -1, wxPoint(-1, -1), wxSize(-1, -1));
+    //lb_YE->Append(wxT("Add Item Here") );
     bar_YE->AddFoldPanelWindow(item_Ye, lb_YE);
     model_left_sizer ->  Add(bar_YE,1,wxGROW);
     
@@ -120,8 +132,8 @@ GotoClass::GotoClass(const wxString& title)
     //Intruments
     wxFoldPanelBar *bar_Ins = new wxFoldPanelBar(panel);
     wxFoldPanel item_Ins = bar_Ins->AddFoldPanel(wxT("Instruments"),true); //collapsed = true
-    wxListBox *lb_Ins = new wxListBox(item_Ins.GetParent(), ID_LISTBOX, wxPoint(-1, -1), wxSize(-1, -1));
-    lb_Ins->Append( wxT("Add Item Here") );
+    lb_Ins = new wxListBox(item_Ins.GetParent(), wxID_ANY, wxPoint(-1, -1), wxSize(-1, -1));
+    //lb_Ins->Append( wxT("Add Item Here") );
     bar_Ins->AddFoldPanelWindow(item_Ins, lb_Ins);
     model_left_sizer ->  Add(bar_Ins,1,wxGROW);
     
@@ -129,8 +141,8 @@ GotoClass::GotoClass(const wxString& title)
     //Set up model spec right
     wxFoldPanelBar *bar_R = new wxFoldPanelBar(panel);
     wxFoldPanel item_R = bar_R->AddFoldPanel(wxT("R"),true);
-    wxListBox *lb_R = new wxListBox(item_R.GetParent(), ID_LISTBOX, wxPoint(-1, -1), wxSize(-1, -1));
-    lb_R->Append( wxT("Add Item Here") );
+    lb_R = new wxListBox(item_R.GetParent(), wxID_ANY, wxPoint(-1, -1), wxSize(-1, -1));
+    //lb_R->Append( wxT("Add Item Here") );
     bar_R->AddFoldPanelWindow(item_R, lb_R);
     model_left_sizer ->  Add(bar_R,1,wxGROW);
     
@@ -141,8 +153,8 @@ GotoClass::GotoClass(const wxString& title)
     //Set up model spec right
     wxFoldPanelBar *bar_X = new wxFoldPanelBar(panel);
     wxFoldPanel item_X = bar_X->AddFoldPanel(wxT("X(required)"));
-    wxListBox *lb_X = new wxListBox(item_X.GetParent(), ID_LISTBOX, wxPoint(-1, -1), wxSize(-1, -1));
-    lb_X->Append( wxT("Add Item Here") );
+    lb_X = new wxListBox(item_X.GetParent(), wxID_ANY, wxPoint(-1, -1), wxSize(-1, -1));
+    //lb_X->Append( wxT("Add Item Here") );
     bar_X->AddFoldPanelWindow(item_X, lb_X);
     model_top_level_sizer ->  Add(bar_X,1,wxGROW);
     
@@ -227,27 +239,46 @@ GotoClass::GotoClass(const wxString& title)
     
     
     //Lower Left is Set, add to lower box
-    lowerhbox -> Add(leftvbox,1,wxGROW | wxLeft);
+    lowerhbox -> Add(leftvbox,4,wxGROW | wxLeft);
     
     
     //Setting up lower right
     //Variables
     wxStaticText *strVariables =  new wxStaticText(panel, wxID_ANY, wxT("Variables"));
-    wxListBox *lb_var = new wxListBox(panel, ID_LISTBOX, wxPoint(-1, -1), wxSize(-1, -1));
-    lb_var->Append( wxT("po90") );
-    lb_var->Append( wxT("po80") );
-    lb_var->Append( wxT("po70") );
-    lb_var->Append( wxT("po60") );
-    lb_var->Append( wxT("south") );
-    lb_var->Append( wxT("fh90") );
-    lb_var->Append( wxT("fh80") );
-    lb_var->Append( wxT("fh70") );
+    lb_var = new wxListCtrl(panel, -1, wxPoint(-1, -1), wxSize(-1, -1));
+    lb_var->InsertItem(0, wxT("po90") );
+    lb_var->InsertItem(0, wxT("po80") );
+    lb_var->InsertItem(0, wxT("po70") );
+    lb_var->InsertItem(0,wxT("po60") );
+    lb_var->InsertItem(0, wxT("south") );
+    lb_var->InsertItem(0, wxT("fh90") );
+    lb_var->InsertItem(0, wxT("fh80") );
+    lb_var->InsertItem(0, wxT("fh70") );
     rightvbox -> Add(strVariables,0,wxGROW );
     rightvbox -> Add(lb_var,1,wxGROW);
     
     //Lower right is Set, add to lower right
-    lowerhbox -> Add(rightvbox,0.3,wxGROW);
+    lowerhbox -> Add(rightvbox,1,wxGROW);
     
+    
+    //Set up drag and drop
+    MyTargetListBox *mdt_Y = new MyTargetListBox(lb_Y);
+    lb_Y -> SetDropTarget(mdt_Y);
+    
+    MyTargetListBox *mdt_YE = new MyTargetListBox(lb_YE);
+    lb_YE -> SetDropTarget(mdt_YE);
+    
+    MyTargetListBox *mdt_Ins = new MyTargetListBox(lb_Ins);
+    lb_Ins -> SetDropTarget(mdt_Ins);
+    
+    MyTargetListBox *mdt_R = new MyTargetListBox(lb_R);
+    lb_R -> SetDropTarget(mdt_R);
+    
+    MyTargetListBox *mdt_X = new MyTargetListBox(lb_X);
+    lb_X -> SetDropTarget(mdt_X);
+    
+    Connect(lb_var->GetId(), wxEVT_COMMAND_LIST_BEGIN_DRAG, wxListEventHandler(GotoClass::OnDragInit));
+
     
     //Lower Box Set Up
     vbox -> Add(lowerhbox,1,wxEXPAND); //proportion to 1 and set a wxEXPAND flag.
@@ -258,5 +289,35 @@ GotoClass::GotoClass(const wxString& title)
     
     
     Centre();
+    
+}
+
+
+
+MyTargetListBox::MyTargetListBox(wxListBox *owner)
+{
+    m_owner = owner;
+}
+
+bool MyTargetListBox::OnDropText(wxCoord x, wxCoord y, const wxString& data)
+{
+    wxString data_utf8 = wxString::FromUTF8(data);
+    wxPuts(data_utf8);
+    m_owner->Append(data_utf8);
+    return true;
+    
+}
+
+//Data is wrong
+void GotoClass::OnDragInit(wxListEvent& event)
+{
+    
+    wxString text = lb_var->GetItemText(event.GetIndex());
+    wxString text_utf8 = wxString::FromUTF8(text);
+    wxPuts(text_utf8);
+
+    wxTextDataObject tdo(text_utf8);
+    wxDropSource tds(tdo, lb_Y);
+    tds.DoDragDrop(wxDrag_CopyOnly);
     
 }

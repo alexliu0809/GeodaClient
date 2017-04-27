@@ -8,6 +8,8 @@
 
 #include "main.h"
 #include "gotoclass.h"
+#include "textdrop.h"
+
 
 IMPLEMENT_APP(MyApp)
 
@@ -15,6 +17,11 @@ bool MyApp::OnInit()
 {
     GotoClass *gotoclass = new GotoClass(wxT("PySALRegression"));
     gotoclass->Show(true);
+
     
     return true;
+    //TextDrop *td = new TextDrop(wxT("TextDrop"));
+    //td->Show(true);
+    
+    //return true;
 }

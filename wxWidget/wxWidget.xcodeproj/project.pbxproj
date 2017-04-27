@@ -12,6 +12,7 @@
 		C32097CE1E9AA54400E3AD37 /* border.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C32097CD1E9AA54400E3AD37 /* border.cpp */; };
 		C32097D21E9AA60D00E3AD37 /* align.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C32097D11E9AA60D00E3AD37 /* align.cpp */; };
 		C32097D51E9AA77900E3AD37 /* gotoclass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C32097D41E9AA77900E3AD37 /* gotoclass.cpp */; };
+		C386D7F21EAFB8B90068D0D0 /* textdrop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C386D7F11EAFB8B90068D0D0 /* textdrop.cpp */; };
 		C38C88461EA95CCE00F858DC /* foldpanelitem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C38C88451EA95CCE00F858DC /* foldpanelitem.cpp */; };
 		C38C88481EA95CF000F858DC /* foldpanelbar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C38C88471EA95CF000F858DC /* foldpanelbar.cpp */; };
 		C38C884A1EA95D1000F858DC /* captionbar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C38C88491EA95D1000F858DC /* captionbar.cpp */; };
@@ -50,6 +51,8 @@
 		C32097D11E9AA60D00E3AD37 /* align.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = align.cpp; sourceTree = "<group>"; };
 		C32097D31E9AA76F00E3AD37 /* gotoclass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gotoclass.h; sourceTree = "<group>"; };
 		C32097D41E9AA77900E3AD37 /* gotoclass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gotoclass.cpp; sourceTree = "<group>"; };
+		C386D7F11EAFB8B90068D0D0 /* textdrop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = textdrop.cpp; sourceTree = "<group>"; };
+		C386D7F31EAFB8C00068D0D0 /* textdrop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = textdrop.h; sourceTree = "<group>"; };
 		C38C88421EA95BD100F858DC /* foldpanelbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = foldpanelbar.h; sourceTree = "<group>"; };
 		C38C88431EA95C3000F858DC /* captionbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = captionbar.h; sourceTree = "<group>"; };
 		C38C88441EA95C7900F858DC /* foldpanelitem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = foldpanelitem.h; sourceTree = "<group>"; };
@@ -135,6 +138,7 @@
 				C38C88451EA95CCE00F858DC /* foldpanelitem.cpp */,
 				C38C88471EA95CF000F858DC /* foldpanelbar.cpp */,
 				C38C88491EA95D1000F858DC /* captionbar.cpp */,
+				C386D7F11EAFB8B90068D0D0 /* textdrop.cpp */,
 			);
 			name = include;
 			sourceTree = "<group>";
@@ -162,6 +166,7 @@
 				C38C884B1EA95DA500F858DC /* icon_collapsed.xpm */,
 				C38C884C1EA95DA500F858DC /* icon_expanded.xpm */,
 				C38C884D1EA95DA500F858DC /* icon_theresmore.xpm */,
+				C386D7F31EAFB8C00068D0D0 /* textdrop.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C32097C81E9AA1D800E3AD37 /* absolute.cpp in Sources */,
+				C386D7F21EAFB8B90068D0D0 /* textdrop.cpp in Sources */,
 				C393605F1E9A9D5E0022EA66 /* menu.cpp in Sources */,
 				C393604E1E9A99900022EA66 /* main.cpp in Sources */,
 				C38C884A1EA95D1000F858DC /* captionbar.cpp in Sources */,

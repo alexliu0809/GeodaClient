@@ -9,6 +9,9 @@
 #ifndef gotoclass_h
 #define gotoclass_h
 
+#include <wx/listctrl.h>
+#include <wx/dirctrl.h>
+#include <wx/dnd.h>
 #include <wx/wx.h>
 
 class GotoClass : public wxFrame
@@ -16,6 +19,26 @@ class GotoClass : public wxFrame
 public:
     GotoClass(const wxString& title);
     
+    //void OnSelect(wxCommandEvent& event);
+    void OnDragInit(wxListEvent& event);
+    
+    wxListBox *lb_Y;
+    wxListBox *lb_YE;
+    wxListBox *lb_Ins;
+    wxListBox *lb_R;
+    wxListBox *lb_X;
+    wxListCtrl *lb_var;
+};
+
+
+
+class MyTargetListBox : public wxTextDropTarget
+{
+    public:
+        MyTargetListBox(wxListBox *owner);
+        virtual bool OnDropText(wxCoord x, wxCoord y, const wxString& data);
+    
+        wxListBox *m_owner;
 };
 
 #endif /* gotoclass_h */
