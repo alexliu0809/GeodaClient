@@ -14,6 +14,10 @@
 #include <wx/dnd.h>
 #include <wx/wx.h>
 
+#include "Python2.7/Python.h"
+#include "Python2.7/object.h"
+#include <stdlib.h>
+
 class GotoClass : public wxFrame
 {
 public:
@@ -21,6 +25,7 @@ public:
     
     //void OnSelect(wxCommandEvent& event);
     void OnDragInit(wxListEvent& event);
+    void BtnRunClicked(wxCommandEvent & event);
     
     wxListBox *lb_Y;
     wxListBox *lb_YE;
@@ -28,6 +33,7 @@ public:
     wxListBox *lb_R;
     wxListBox *lb_X;
     wxListCtrl *lb_var;
+    
 };
 
 

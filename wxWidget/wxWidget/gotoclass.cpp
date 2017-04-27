@@ -10,10 +10,7 @@
 #include "Listbox.h"
 #include "foldpanelbar.h"
 
-void handlerFuncName(wxCommandEvent& event)
-{
-    wxPuts("Mother Fucker");
-}
+
 
 GotoClass::GotoClass(const wxString& title)
 : wxFrame(NULL, -1, title, wxPoint(-1, -1), wxSize(800, 550))
@@ -72,7 +69,7 @@ GotoClass::GotoClass(const wxString& title)
     wxButton *run = new wxButton(panel, wxID_ANY, wxT("Run"));
     
     //Connect
-    
+    Connect(run->GetId(), wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(GotoClass::BtnRunClicked));
     
     //add
     spatialButtonsBoxer -> Add(openModel,1);
@@ -292,6 +289,12 @@ GotoClass::GotoClass(const wxString& title)
     
 }
 
+void GotoClass::BtnRunClicked(wxCommandEvent& event)
+{
+    wxPuts("Run Clicked");
+    
+    
+}
 
 
 MyTargetListBox::MyTargetListBox(wxListBox *owner)
