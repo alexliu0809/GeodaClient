@@ -13,7 +13,7 @@
 #include <wx/dirctrl.h>
 #include <wx/dnd.h>
 #include <wx/wx.h>
-
+#include <wx/window.h>
 
 
 class GotoClass : public wxFrame
@@ -23,6 +23,9 @@ public:
     // OnSelect(wxCommandEvent& event);
     void OnDragInit(wxListEvent& event);
     void BtnRunClicked(wxCommandEvent & event);
+    void ListBoxClicked(wxCommandEvent &event);
+    
+    wxPanel *panel; //tp level panel
     
     wxListBox *lb_Y;
     wxListBox *lb_YE;

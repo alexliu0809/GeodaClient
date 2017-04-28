@@ -11,6 +11,8 @@
 #include "foldpanelbar.h"
 #include "PythonHelper.h"
 
+//& is getting a instance, not a pointer
+
 
 GotoClass::GotoClass(const wxString& title)
 : wxFrame(NULL, -1, title, wxPoint(-1, -1), wxSize(800, 550))
@@ -47,7 +49,7 @@ GotoClass::GotoClass(const wxString& title)
     
     
     
-    wxPanel *panel = new wxPanel(this, -1); //Top Level Panel
+    panel = new wxPanel(this, -1); //Top Level Panel
     
     wxBoxSizer *vbox = new wxBoxSizer(wxVERTICAL); //Top Level Container
     
@@ -115,6 +117,7 @@ GotoClass::GotoClass(const wxString& title)
     //lb_Y->Append(wxT("Add Item Here") );
     bar_Y->AddFoldPanelWindow(item_Y, lb_Y);
     model_left_sizer ->  Add(bar_Y,1,wxGROW); //add to left
+    Connect(lb_Y->GetId(),wxEVT_COMMAND_LISTBOX_DOUBLECLICKED,wxCommandEventHandler(GotoClass::ListBoxClicked));
     
     //YE
     wxFoldPanelBar *bar_YE = new wxFoldPanelBar(panel);
@@ -310,6 +313,23 @@ void GotoClass::BtnRunClicked(wxCommandEvent& event)
     
 }
 
+void GotoClass::ListBoxClicked(wxCommandEvent& event) {
+    //long id_Y = lb_Y->GetId();
+    long id_e = event.GetId();
+    
+    //panel->Fi
+    wxListBox* window = (wxListBox*) panel->FindWindowById(id_e);
+    unsigned int index = window->GetSelection();
+    wxString text = window->GetString(index);
+    text.insert(text.length(), wxT("   ")); //You should insert number of chars of spaces
+    window->Delete(index);
+    lb_var->InsertItem(0, text);
+    
+    //printf("%d",index);
+    //wxString text = window->GetString(index);
+    wxPuts(text);
+    wxPuts("LB Clicked");
+}
 
 MyTargetListBox::MyTargetListBox(wxListBox *owner)
 {
@@ -329,14 +349,34 @@ bool MyTargetListBox::OnDropText(wxCoord x, wxCoord y, const wxString& data)
 //Data is wrong
 void GotoClass::OnDragInit(wxListEvent& event)
 {
-    
-    wxString text = lb_var->GetItemText(event.GetIndex());
+    long index = event.GetIndex();
+    wxString text = lb_var->GetItemText(index);
     //text = text.Trim();
     wxPuts("Data Sent:");
     wxPuts(text);
 
     wxTextDataObject tdo(text);
-    wxDropSource tds(tdo, lb_Y);
-    tds.DoDragDrop(wxDrag_CopyOnly);
+    wxDropSource dragSource(this);
+    dragSource.SetData(tdo);
+    wxDragResult result = dragSource.DoDragDrop(wxDrag_CopyOnly);
+    
+    //Watch out for cases. DragMove only works on windows
+    switch (result)
+    {
+        case wxDragCopy: /* 数据被拷贝或者被链接:
+                          无需特别操作 */
+        case wxDragLink:
+            lb_var -> DeleteItem(index);
+            break;
+        case wxDragMove: /* 数据被移动,删除原始数据 */
+            //DeleteMyDraggedData();
+            lb_var -> DeleteItem(index);
+            break;
+        default:         /* 操作被取消或者数据不被接受
+                          或者发生了错误:
+                          不做任何操作 */
+            break;
+    }
+
     
 }
