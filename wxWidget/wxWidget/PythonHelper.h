@@ -11,8 +11,9 @@
 #include "Python.h"
 #include "object.h"
 #include <stdlib.h>
+#include <wx/wx.h>
 
-int RunPython();
+int RunPython(wxArrayString x_array, wxArrayString y_array);
 void InitializePython();
 void FinalizePython();
 

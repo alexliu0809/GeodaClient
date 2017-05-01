@@ -15,7 +15,7 @@
 
 
 GotoClass::GotoClass(const wxString& title)
-: wxFrame(NULL, -1, title, wxPoint(-1, -1), wxSize(800, 550))
+: wxFrame(NULL, -1, title, wxPoint(-1, -1), wxSize(610, 760))
 {
     /*
     wxBoxSizer  *topSizer = new wxBoxSizer( wxVERTICAL );
@@ -71,6 +71,7 @@ GotoClass::GotoClass(const wxString& title)
     wxButton *run = new wxButton(panel, wxID_ANY, wxT("Run"));
     
     //Connect
+    Connect(resetModel->GetId(), wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(GotoClass::BtnResetClicked));
     Connect(run->GetId(), wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(GotoClass::BtnRunClicked));
     
     //add
@@ -126,7 +127,7 @@ GotoClass::GotoClass(const wxString& title)
     //lb_YE->Append(wxT("Add Item Here") );
     bar_YE->AddFoldPanelWindow(item_Ye, lb_YE);
     model_left_sizer ->  Add(bar_YE,1,wxGROW);
-    
+    Connect(lb_YE->GetId(),wxEVT_COMMAND_LISTBOX_DOUBLECLICKED,wxCommandEventHandler(GotoClass::ListBoxClicked));
     
     
     //Intruments
@@ -136,6 +137,7 @@ GotoClass::GotoClass(const wxString& title)
     //lb_Ins->Append( wxT("Add Item Here") );
     bar_Ins->AddFoldPanelWindow(item_Ins, lb_Ins);
     model_left_sizer ->  Add(bar_Ins,1,wxGROW);
+    Connect(lb_Ins->GetId(),wxEVT_COMMAND_LISTBOX_DOUBLECLICKED,wxCommandEventHandler(GotoClass::ListBoxClicked));
     
     //R
     //Set up model spec right
@@ -145,6 +147,8 @@ GotoClass::GotoClass(const wxString& title)
     //lb_R->Append( wxT("Add Item Here") );
     bar_R->AddFoldPanelWindow(item_R, lb_R);
     model_left_sizer ->  Add(bar_R,1,wxGROW);
+    Connect(lb_R->GetId(),wxEVT_COMMAND_LISTBOX_DOUBLECLICKED,wxCommandEventHandler(GotoClass::ListBoxClicked));
+
     
     //left set up
     model_top_level_sizer -> Add(model_left_sizer,1,wxGROW);
@@ -157,6 +161,9 @@ GotoClass::GotoClass(const wxString& title)
     //lb_X->Append( wxT("Add Item Here") );
     bar_X->AddFoldPanelWindow(item_X, lb_X);
     model_top_level_sizer ->  Add(bar_X,1,wxGROW);
+    Connect(lb_X->GetId(),wxEVT_COMMAND_LISTBOX_DOUBLECLICKED,wxCommandEventHandler(GotoClass::ListBoxClicked));
+
+    
     
     //add model spec
     leftvbox -> Add(strModelSpec,0,wxALIGN_LEFT);
@@ -187,10 +194,9 @@ GotoClass::GotoClass(const wxString& title)
     //wxStaticBox* staticBox_method = new wxStaticBox(panel, wxID_ANY, wxT(""));
     //wxStaticBoxSizer* staticSizer_method = new wxStaticBoxSizer(staticBox_method, wxVERTICAL);
     wxArrayString strings_method;
-    strings_method.Add(wxT("Standard"));
-    strings_method.Add(wxT("Spatial Lag"));
-    strings_method.Add(wxT("Spatial Error"));
-    strings_method.Add(wxT("Spatial Lag+Error"));
+    strings_method.Add(wxT("OLS"));
+    strings_method.Add(wxT("GMM"));
+    strings_method.Add(wxT("ML"));
     wxRadioBox* radioBox_method = new wxRadioBox(panel, wxID_ANY, wxT("Method"), wxDefaultPosition, wxDefaultSize, strings_method, 1, wxRA_SPECIFY_COLS);
     est_top_level_sizer ->Add(radioBox_method, 0, wxALIGN_LEFT |wxALL, 0);
     //staticSizer_method -> Add(radioBox_method, 0, wxALIGN_LEFT |wxALL, 0);
@@ -306,10 +312,53 @@ GotoClass::GotoClass(const wxString& title)
     
 }
 
+void GotoClass::BtnResetClicked(wxCommandEvent& event)
+{
+    wxPuts("Reset Clicked");
+    lb_Y->Clear();
+    lb_YE->Clear();
+    lb_Ins->Clear();
+    lb_R->Clear();
+    lb_X->Clear();
+    
+    
+    lb_var->DeleteAllItems();
+    lb_var->InsertItem(0, wxT("po90  "));
+    lb_var->InsertItem(0, wxT("po80  ") );
+    lb_var->InsertItem(0, wxT("po70  ") );
+    lb_var->InsertItem(0,wxT("po60  ") );
+    //lb_var->InsertItem(0, wxT("south         ")); //5 spaces, # of spaces related to number of chars
+    lb_var->InsertItem(0, wxT("fh90  "));
+    lb_var->InsertItem(0, wxT("fh80  ") );
+    lb_var->InsertItem(0, wxT("fh70  ") );
+    lb_var->InsertItem(0, wxT("blk90   "));
+    lb_var->InsertItem(0, wxT("blk80   ") );
+    lb_var->InsertItem(0, wxT("blk70   ") );
+    
+}
+
 void GotoClass::BtnRunClicked(wxCommandEvent& event)
 {
     wxPuts("Run Clicked");
-    RunPython();
+    
+    int X_count = lb_X -> GetCount ();
+    wxArrayString X_item_array;
+    
+    for (int i = 0; i < X_count; i++)
+    {
+        X_item_array.Add(lb_X -> GetString(i));
+    }
+    
+    int Y_count = lb_Y -> GetCount ();
+    wxArrayString Y_item_array;
+    
+    for (int i = 0; i < Y_count; i++)
+    {
+        Y_item_array.Add(lb_Y -> GetString(i));
+    }
+    //wxPuts(X_item_array);
+    
+    RunPython(X_item_array,Y_item_array);
     
 }
 

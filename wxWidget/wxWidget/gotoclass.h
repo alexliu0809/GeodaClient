@@ -23,6 +23,7 @@ public:
     // OnSelect(wxCommandEvent& event);
     void OnDragInit(wxListEvent& event);
     void BtnRunClicked(wxCommandEvent & event);
+    void BtnResetClicked(wxCommandEvent & event);
     void ListBoxClicked(wxCommandEvent &event);
     
     wxPanel *panel; //tp level panel

@@ -8,6 +8,7 @@
 
 #include "PythonHelper.h"
 
+
 /** Report Errors */
 void ReportError(char *msg)
 {
@@ -191,20 +192,39 @@ void Python_Append_List_Element(PyObject*pList, PyObject* element)
 
 
 
-int RunPython()
+int RunPython(wxArrayString x_array, wxArrayString y_array)
 {
     
     //InitializePython();
     
-    PyObject *pValue=nullptr,*pArgs=nullptr,*pValue1,*pValue2,*pValue3,*pValue4;
+    PyObject *pValue=nullptr,*pArgs=nullptr,*pValue1,*pValue2,*pValue3,*pValue4,*pValue_X,*pValue_Y;
     PyObject *pResult,*pList1,*pList2;
     
+    pArgs = Python_Init_Arg_Pointer(2);
+    pValue_X = Python_Get_String_From_String("Hello"); //Set Arg
+    Python_Set_One_Arg(pArgs,0,pValue); //set arg 1
+    pValue_Y = Python_Get_String_From_String("World"); //arg2 = 5
+    Python_Set_One_Arg(pArgs,1,pValue); //set arg 2
+
     
     
+    printf("Test RunModule Function with String Args\n\n");
+    pArgs = Python_Init_Arg_Pointer(2);
+    pValue_X = Python_Get_String_From_String("Hello"); //arg1 = 4
+    Python_Set_One_Arg(pArgs,0,pValue_X); //set arg 1
+    pValue_Y = Python_Get_String_From_String("World"); //arg2 = 5
+    Python_Set_One_Arg(pArgs,1,pValue_Y); //set arg 2
     
+    Python_RunModule(".", "stringArgMain", "main", pArgs,&pResult); //run
+    printf("Result of call: %ld\n", PyInt_AsLong(pResult));
+    printf("\n\n");
     
-    printf("Test2:Test RunModule Function without Args\n");
-    Python_RunModule("/Users/Enze/Desktop/", "noArgMain", "main", nullptr,&pResult);
+    //printf("Test2:Test RunModule Function without Args\n");
+    //Python_RunModule("/Users/Enze/Desktop/", "noArgMain", "main", nullptr,&pResult);
+    //printf("\n\n");
+    
+    //printf("Test2:Test Run Python Scripts\n");
+    //Python_RunModule("/Users/Enze/Desktop/", "PythonMain", "main", nullptr, &pResult);
     //printf("\n\n");
     
     
