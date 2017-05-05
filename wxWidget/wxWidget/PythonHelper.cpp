@@ -197,23 +197,36 @@ int RunPython(wxArrayString x_array, wxArrayString y_array)
     
     //InitializePython();
     
-    PyObject *pValue=nullptr,*pArgs=nullptr,*pValue1,*pValue2,*pValue3,*pValue4,*pValue_X,*pValue_Y;
-    PyObject *pResult,*pList1,*pList2;
     
-    pArgs = Python_Init_Arg_Pointer(2);
-    pValue_X = Python_Get_String_From_String("Hello"); //Set Arg
-    Python_Set_One_Arg(pArgs,0,pValue); //set arg 1
-    pValue_Y = Python_Get_String_From_String("World"); //arg2 = 5
-    Python_Set_One_Arg(pArgs,1,pValue); //set arg 2
+    PyObject *pValue=nullptr,*pArgs=nullptr,*pValue1,*pValue2,*pValue3,*pValue4,*pValue_X,*pValue_Y;
+    PyObject *pResult,*pList_x,*pList_y;
+    
+    //printf("%d %d",x_array.GetCount(),y_array.GetCount());
+    
+    pList_x = Python_Create_List(x_array.GetCount());
+    pList_y = Python_Create_List(y_array.GetCount());
+    
+    
+    for(int i = 0; i < x_array.GetCount(); i++)
+    {
+        PyObject *item = Python_Get_String_From_String((char *)(const char*)x_array[i].mb_str(wxConvUTF8));
+        PyList_SetItem(pList_x, i, item);
+    }
+    
+    for(int i = 0; i < y_array.GetCount(); i++)
+    {
+        PyObject *item = Python_Get_String_From_String((char *)(const char*)y_array[i].mb_str(wxConvUTF8));
+        PyList_SetItem(pList_y, i, item);
+    }
 
     
     
     printf("Test RunModule Function with String Args\n\n");
     pArgs = Python_Init_Arg_Pointer(2);
     pValue_X = Python_Get_String_From_String("Hello"); //arg1 = 4
-    Python_Set_One_Arg(pArgs,0,pValue_X); //set arg 1
+    Python_Set_One_Arg(pArgs,0,pList_x); //set arg 1
     pValue_Y = Python_Get_String_From_String("World"); //arg2 = 5
-    Python_Set_One_Arg(pArgs,1,pValue_Y); //set arg 2
+    Python_Set_One_Arg(pArgs,1,pList_y); //set arg 2
     
     Python_RunModule(".", "stringArgMain", "main", pArgs,&pResult); //run
     printf("Result of call: %ld\n", PyInt_AsLong(pResult));

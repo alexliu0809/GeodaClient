@@ -260,17 +260,15 @@ GotoClass::GotoClass(const wxString& title)
     //str2 = str2.Trim();
     //lb_var->InsertItem(0, str2 );
     
-    lb_var->InsertItem(0, wxT("po90  "));
-    lb_var->InsertItem(0, wxT("po80  ") );
-    lb_var->InsertItem(0, wxT("po70  ") );
-    lb_var->InsertItem(0,wxT("po60  ") );
-    //lb_var->InsertItem(0, wxT("south         ")); //5 spaces, # of spaces related to number of chars
-    lb_var->InsertItem(0, wxT("fh90  "));
-    lb_var->InsertItem(0, wxT("fh80  ") );
-    lb_var->InsertItem(0, wxT("fh70  ") );
     lb_var->InsertItem(0, wxT("blk90   "));
     lb_var->InsertItem(0, wxT("blk80   ") );
     lb_var->InsertItem(0, wxT("blk70   ") );
+    lb_var->InsertItem(0, wxT("blk60   "));
+    lb_var->InsertItem(0, wxT("blk50   ") );
+    lb_var->InsertItem(0, wxT("blk40   ") );
+    lb_var->InsertItem(0, wxT("blk30   "));
+    lb_var->InsertItem(0, wxT("blk20   ") );
+    lb_var->InsertItem(0, wxT("blk10   ") );
     
     rightvbox -> Add(strVariables,0,wxGROW );
     rightvbox -> Add(lb_var,1,wxGROW);
@@ -323,17 +321,16 @@ void GotoClass::BtnResetClicked(wxCommandEvent& event)
     
     
     lb_var->DeleteAllItems();
-    lb_var->InsertItem(0, wxT("po90  "));
-    lb_var->InsertItem(0, wxT("po80  ") );
-    lb_var->InsertItem(0, wxT("po70  ") );
-    lb_var->InsertItem(0,wxT("po60  ") );
-    //lb_var->InsertItem(0, wxT("south         ")); //5 spaces, # of spaces related to number of chars
-    lb_var->InsertItem(0, wxT("fh90  "));
-    lb_var->InsertItem(0, wxT("fh80  ") );
-    lb_var->InsertItem(0, wxT("fh70  ") );
     lb_var->InsertItem(0, wxT("blk90   "));
     lb_var->InsertItem(0, wxT("blk80   ") );
     lb_var->InsertItem(0, wxT("blk70   ") );
+    lb_var->InsertItem(0, wxT("blk60   "));
+    lb_var->InsertItem(0, wxT("blk50   ") );
+    lb_var->InsertItem(0, wxT("blk40   ") );
+    lb_var->InsertItem(0, wxT("blk30   "));
+    lb_var->InsertItem(0, wxT("blk20   ") );
+    lb_var->InsertItem(0, wxT("blk10   ") );
+
     
 }
 
@@ -348,6 +345,7 @@ void GotoClass::BtnRunClicked(wxCommandEvent& event)
     {
         X_item_array.Add(lb_X -> GetString(i));
     }
+    //wxPuts(X_item_array[0]);
     
     int Y_count = lb_Y -> GetCount ();
     wxArrayString Y_item_array;
@@ -357,6 +355,7 @@ void GotoClass::BtnRunClicked(wxCommandEvent& event)
         Y_item_array.Add(lb_Y -> GetString(i));
     }
     //wxPuts(X_item_array);
+    //wxPuts(Y_item_array[0]);
     
     RunPython(X_item_array,Y_item_array);
     
@@ -376,8 +375,8 @@ void GotoClass::ListBoxClicked(wxCommandEvent& event) {
     
     //printf("%d",index);
     //wxString text = window->GetString(index);
-    wxPuts(text);
-    wxPuts("LB Clicked");
+    //wxPuts(text);
+    //wxPuts("LB Clicked");
 }
 
 MyTargetListBox::MyTargetListBox(wxListBox *owner)
@@ -387,8 +386,8 @@ MyTargetListBox::MyTargetListBox(wxListBox *owner)
 
 bool MyTargetListBox::OnDropText(wxCoord x, wxCoord y, const wxString& data)
 {
-    wxPuts("Data Receive:");
-    wxPuts(data);
+    //wxPuts("Data Receive:");
+    //wxPuts(data);
     wxString data_trim = wxString(data).Trim();
     m_owner->Append(data_trim);
     return true;
@@ -401,8 +400,8 @@ void GotoClass::OnDragInit(wxListEvent& event)
     long index = event.GetIndex();
     wxString text = lb_var->GetItemText(index);
     //text = text.Trim();
-    wxPuts("Data Sent:");
-    wxPuts(text);
+    //wxPuts("Data Sent:");
+    //wxPuts(text);
 
     wxTextDataObject tdo(text);
     wxDropSource dragSource(this);
