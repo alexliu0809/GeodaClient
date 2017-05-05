@@ -1,0 +1,8 @@
+Build Python on Mac
+1.Build python from source
+2.Install Anaconda2.7
+3.Install_name_tool -change old new name
+3.Copy dylib and python2.7 directory.
+4.Move python2.7 directory to new folder lib
+#4.Copy bin and sitepackages from anaconda to final dir.
+5.Run
